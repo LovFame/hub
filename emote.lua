@@ -2919,7 +2919,6 @@ local function handleSectorAction(index)
 
     State.lastRadialActionTime = tick()
 
-
     if State.favoriteEnabled then
         if State.currentMode == "animation" then
             toggleFavoriteAnimation(itemData)
@@ -2933,6 +2932,32 @@ local function handleSectorAction(index)
             local _, hum = getCharacterAndHumanoid()
             if hum then
                 playEmote(hum, itemData.id)
+            end
+        end
+    end
+
+    local function playEmote(humanoid, emoteId)
+    if not humanoid then return end
+
+    local emoteAnim = Instance.new("Animation")
+    emoteAnim.AnimationId = "rbxassetid://" .. tostring(emoteId)
+
+    local track = humanoid:LoadAnimation(emoteAnim)
+    track.Priority = Enum.AnimationPriority.Idle
+    track:Play()
+
+    track.Stopped:Connect(function()
+        track:Destroy()
+    end)
+end
+
+
+
+    track.Stopped:Connect(function()
+        track:Destroy()
+    end)
+end
+
             end
         end
     end
@@ -3336,8 +3361,21 @@ local function stopCurrentEmote()
 end
 
 local function playEmote(humanoid, emoteId)
-    stopCurrentEmote()
-    stopEmotes()
+    if not humanoid then return end
+
+    local emoteAnim = Instance.new("Animation")
+    emoteAnim.AnimationId = "rbxassetid://" .. tostring(emoteId)
+
+    local track = humanoid:LoadAnimation(emoteAnim)
+    track.Priority = Enum.AnimationPriority.Idle
+    track:Play()
+
+    -- Al terminar el emote, se limpia y Animate retoma control
+    track.Stopped:Connect(function()
+        track:Destroy()
+    end)
+end
+
 
     local animation = Instance.new("Animation")
     animation.AnimationId = "rbxassetid://" .. emoteId
