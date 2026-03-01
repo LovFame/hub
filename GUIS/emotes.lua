@@ -464,7 +464,7 @@ getgenv().Notify = function(data)
     end
 end
 
-local SettingsLib = SafeLoad("https://raw.githubusercontent.com/LovFame/Hub/refs/heads/Branch/GUIS/Settings.lua", "Settings Library")
+local SettingsLib = SafeLoad("https://raw.githubusercontent.com/LovFame/hub/refs/heads/Branch/GUIS/Settings.lua", "Settings Library")
 
 local ToggleContainer = Instance.new("Frame")
 ToggleContainer.Name = "open/Close"
@@ -1877,7 +1877,7 @@ BtnImportSettings.MouseButton1Click:Connect(function() HandleImportPrompt("Setti
 BtnImportFavorites.MouseButton1Click:Connect(function() HandleImportPrompt("Favorites") end)
 
 pcall(function()
-    SafeLoad("https://raw.githubusercontent.com/LovFame/Hub/Branch/GUIS/count-emote", "Count Emote")
+    SafeLoad("https://raw.githubusercontent.com/LovFame/hub/Branch/GUIS/count-emote", "Count Emote")
 end)
 
 getgenv().Notify({
@@ -4191,7 +4191,7 @@ task.spawn(function()
 end)
 
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
-    SafeLoad("https://raw.githubusercontent.com/LovFame/Hub/refs/heads/Branch/GUIS/OpenEmote.lua", "Open Emote")
+    SafeLoad("https://raw.githubusercontent.com/LovFame/hub/refs/heads/Branch/GUIS/OpenEmote.lua", "Open Emote")
     getgenv().Notify({
         Title = 'LovFame | Emote Mobile',
         Content = '📱 Added emote open button for ease of use',
