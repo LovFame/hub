@@ -767,7 +767,7 @@ local CopyBtn = SettingsLib:Create("TextButton", {
 }, { SettingsLib:Create("UICorner", {CornerRadius = UDim.new(0, 6)}) })
 
 CopyBtn.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/kRfzv2kV7X")
+    setclipboard("goesfame / text me")
     getgenv().Notify({Title = "Discord", Content = "Link copied to clipboard!", Duration = 3})
 end)
 
