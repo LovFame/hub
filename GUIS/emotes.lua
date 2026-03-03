@@ -1,4 +1,4 @@
---[[ CREDITS TO 7YD7
+--[[ CREDITS TO DSC/735919230050107442
 Source script from: https://github.com/Roblox/creator-docs/blob/main/content/en-us/characters/emotes.md
 
 
